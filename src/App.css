@@ -36,3 +36,23 @@
     transform: rotate(360deg);
   }
 }
+
+table.force-wrap {
+  table-layout: fixed;
+}
+
+table.force-wrap td {
+  word-break: break-all;
+}
+
+ul.force-wrap li {
+  word-break: break-all;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+td {
+  border: 1px solid black;
+}

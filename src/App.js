@@ -1,14 +1,23 @@
-import './App.css';
-import { BalanceForm, SendForm } from './WalletForm';
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./pages/Layout";
+import Home from "./pages/Home";
+import Send from "./pages/Send";
+import SimpleStorage from "./pages/SimpleStorage";
 
-function App() {
+export default function App() {
   return (
-    <>
-      <BalanceForm/>
-      <hr/>
-      <SendForm/>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="send" element={<Send />} />
+          ç<Route path="simplestorage" element={<SimpleStorage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
-export default App;
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
